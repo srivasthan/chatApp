@@ -16,6 +16,13 @@ public class ConnectionService extends Service {
     private static final String TAG = "Service";
 
     public static final String UI_AUTHENTICATED = " com.task.chatapp.uiauthenticated";
+    public static final String SEND_MESSAGE = " com.task.chatapp.sendmessage";
+    public static final String BUNDLE_MESSAGE_BODY = "b_body";
+    public static final String BUNDLE_TO = "b_to";
+
+    public static final String NEW_MESSAGE = " com.task.chatapp.newmessage";
+    public static final String BUNDLE_FROM_JID = "b_from";
+
     public static Connection.ConnectionState sConnectionState;
     public static Connection.LoggedInState sLoggedInState;
     private boolean mActive;//Stores whether or not the thread is active
@@ -63,6 +70,7 @@ public class ConnectionService extends Service {
             mConnection.connect();
 
         } catch (IOException | SmackException | XMPPException e) {
+            Log.d(TAG, "Something went wrong while connecting ,make sure the credentials are right and try again");
             e.printStackTrace();
             //Stop the service all together.
             stopSelf();
