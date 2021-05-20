@@ -14,21 +14,17 @@ import java.io.IOException;
 
 public class ConnectionService extends Service {
     private static final String TAG = "Service";
-
     public static final String UI_AUTHENTICATED = " com.task.chatapp.uiauthenticated";
     public static final String SEND_MESSAGE = " com.task.chatapp.sendmessage";
     public static final String BUNDLE_MESSAGE_BODY = "b_body";
     public static final String BUNDLE_TO = "b_to";
-
     public static final String NEW_MESSAGE = " com.task.chatapp.newmessage";
     public static final String BUNDLE_FROM_JID = "b_from";
-
     public static Connection.ConnectionState sConnectionState;
     public static Connection.LoggedInState sLoggedInState;
-    private boolean mActive;//Stores whether or not the thread is active
+    private boolean mActive;
     private Thread mThread;
-    private Handler mTHandler;//We use this handler to post messages to
-    //the background thread.
+    private Handler mTHandler;
     private Connection mConnection;
 
     public ConnectionService() {
@@ -70,8 +66,8 @@ public class ConnectionService extends Service {
             mConnection.connect();
 
         } catch (IOException | SmackException | XMPPException e) {
-            Log.d(TAG, "Something went wrong while connecting ,make sure the credentials are right and try again");
             e.printStackTrace();
+
             //Stop the service all together.
             stopSelf();
         }
@@ -127,10 +123,4 @@ public class ConnectionService extends Service {
         //RETURNING START_STICKY CAUSES OUR CODE TO STICK AROUND WHEN THE APP ACTIVITY HAS DIED.
     }
 
-    @Override
-    public void onDestroy() {
-        Log.d(TAG, "onDestroy()");
-        super.onDestroy();
-        stop();
-    }
 }
