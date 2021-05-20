@@ -1,4 +1,4 @@
-package com.task.chatapp;
+package com.task.chatapp.xmpp;
 
 import android.app.Service;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
+
+import com.task.chatapp.xmpp.Connection;
 
 import org.jivesoftware.smack.SmackException;
 import org.jivesoftware.smack.XMPPException;

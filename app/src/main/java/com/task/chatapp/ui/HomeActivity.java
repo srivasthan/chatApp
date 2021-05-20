@@ -1,4 +1,4 @@
-package com.task.chatapp;
+package com.task.chatapp.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.task.chatapp.Model.Contact;
+import com.task.chatapp.R;
+import com.task.chatapp.xmpp.ConnectionService;
 
 import java.util.ArrayList;
 import java.util.List;

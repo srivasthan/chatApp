@@ -1,4 +1,4 @@
-package com.task.chatapp;
+package com.task.chatapp.Model;
 
 public class Contact {
     private String jid;

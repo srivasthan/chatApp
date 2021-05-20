@@ -1,4 +1,4 @@
-package com.task.chatapp;
+package com.task.chatapp.xmpp;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

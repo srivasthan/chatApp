@@ -1,4 +1,4 @@
-package com.task.chatapp;
+package com.task.chatapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +21,9 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.task.chatapp.R;
+import com.task.chatapp.xmpp.ConnectionService;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
